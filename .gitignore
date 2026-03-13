@@ -1,0 +1,31 @@
+﻿# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Streamlit/local secrets
+.streamlit/secrets.toml
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build/test cache
+.pytest_cache/
+.mypy_cache/
+
+# Local downloaded artifacts (optional)
+*.png
+*.csv
+*.json
+
+# Keep model tracked for stable cloud deployment
+# (Do not ignore mnist-12.onnx)
+
+saved_images/
