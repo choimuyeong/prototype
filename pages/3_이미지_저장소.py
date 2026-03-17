@@ -35,7 +35,7 @@ with tab1:
         data=png_buffer.getvalue(),
         file_name=f"mnist_preprocessed_{ts}.png",
         mime="image/png",
-        use_container_width=True,
+        use_container_width=False,
     )
 
 with tab2:
@@ -51,14 +51,14 @@ with tab2:
         data=json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8"),
         file_name=f"mnist_result_{ts}.json",
         mime="application/json",
-        use_container_width=True,
+        use_container_width=False,
     )
 
 with tab3:
     csv_text = "label,probability\n" + "\n".join([f"{i},{p}" for i, p in enumerate(probs)])
     st.dataframe(
         [{"label": i, "probability": p} for i, p in enumerate(probs)],
-        use_container_width=True,
+        width=250,
         hide_index=True,
     )
     st.download_button(
@@ -66,5 +66,5 @@ with tab3:
         data=csv_text.encode("utf-8"),
         file_name=f"mnist_probs_{ts}.csv",
         mime="text/csv",
-        use_container_width=True,
+        use_container_width=False,
     )

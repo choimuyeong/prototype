@@ -12,18 +12,18 @@ st.caption("MNIST ONNX 모델 상태를 확인하고 다운로드/세션 캐시�
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    if st.button("모델 상태 새로고침", use_container_width=True):
+    if st.button("모델 상태 새로고침", use_container_width=False):
         st.rerun()
 
 with col2:
-    if st.button("모델 재다운로드", type="primary", use_container_width=True):
+    if st.button("모델 재다운로드", type="primary", use_container_width=False):
         with st.spinner("모델 파일을 다시 다운로드하는 중..."):
             path = redownload_model()
             reload_session()
         st.success(f"재다운로드 완료: {path.name}")
 
 with col3:
-    if st.button("세션 캐시 재로드", use_container_width=True):
+    if st.button("세션 캐시 재로드", use_container_width=False):
         with st.spinner("ONNX 세션 캐시를 갱신하는 중..."):
             reload_session()
         st.success("세션 캐시 갱신 완료")
